@@ -19,6 +19,40 @@ FROM Histories h1, PidTable, Cars, Users
 WHERE PidTable.PId = h1.PId AND h1.UserId = Users.UserId AND h1.UserId = @userId AND h1.CarId = @carId 
 GROUP BY h1.PId, PidTable.Descriptions, PidTable.Units, Users.FirstName, Users.LastName, Users.Age, Cars.Make, Cars.Model, Cars.Year, Cars.IsHybrid;";
 
+        public int AddCarid(int carId)
+        {
+            using (var conn = new SqlConnection())
+            {
+                conn.ConnectionString = _connectionString;
+                conn.Open();
+                var command = new SqlCommand(@"INSERT INTO CarIdTable (CarId) VALUES (@carId)", conn);
+                command.Parameters.Add(new SqlParameter("carId", carId));
+                command.ExecuteNonQuery();
+            }
+
+            return carId;
+        }
+
+        public int GetMostRecentCarId()
+        {
+            using (var conn = new SqlConnection())
+            {
+                conn.ConnectionString = _connectionString;
+                conn.Open();
+                var command = new SqlCommand(@"SELECT CarId FROM CarIdTable ORDER BY Id Desc", conn);
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return (int)reader["CarId"];
+                    }
+                }
+
+                return 5;
+            }
+        }
+
         public string GetPIdDesciption(string pid, double value)
         {
             using (var conn = new SqlConnection())

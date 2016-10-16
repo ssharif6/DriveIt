@@ -8,11 +8,18 @@ namespace DriveIt.Controllers
 {
     public class CarValuesController : ApiController
     {
+        public int carId;
+
         public static CarInfoManager _manager = new CarInfoManager();
 
         public int Post(string make, string model, int year, bool isHybrid)
         {
-            return _manager.GetCarId(make, model, year, isHybrid);
+            return _manager.AddCarid(_manager.GetCarId(make, model, year, isHybrid));
+        }
+
+        public int Get()
+        {
+            return _manager.GetMostRecentCarId();
         }
 
         public void Post(int userId, int carId, double value, string pId)

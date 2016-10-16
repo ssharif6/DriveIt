@@ -1,0 +1,1 @@
+﻿SELECT CarId FROM CarIdTable ORDER BY Id Desc
