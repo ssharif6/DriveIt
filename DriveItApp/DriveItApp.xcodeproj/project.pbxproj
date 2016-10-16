@@ -1,0 +1,567 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		85C345E61DB39140009210DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C345E51DB39140009210DB /* AppDelegate.swift */; };
+		85C345E81DB39140009210DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C345E71DB39140009210DB /* ViewController.swift */; };
+		85C345EB1DB39140009210DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85C345E91DB39140009210DB /* Main.storyboard */; };
+		85C345ED1DB39140009210DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85C345EC1DB39140009210DB /* Assets.xcassets */; };
+		85C345F01DB39140009210DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85C345EE1DB39140009210DB /* LaunchScreen.storyboard */; };
+		85C345FB1DB39140009210DB /* DriveItAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C345FA1DB39140009210DB /* DriveItAppTests.swift */; };
+		85C346061DB39140009210DB /* DriveItAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C346051DB39140009210DB /* DriveItAppUITests.swift */; };
+		85C346151DB3917C009210DB /* DriverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C346141DB3917C009210DB /* DriverModel.swift */; };
+		85C3461A1DB3F5EC009210DB /* CarInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C346191DB3F5EC009210DB /* CarInfoViewController.swift */; };
+		85C3461C1DB400CF009210DB /* CarPidInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C3461B1DB400CF009210DB /* CarPidInfoViewController.swift */; };
+		85C3461E1DB401B8009210DB /* PdiTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C3461D1DB401B8009210DB /* PdiTableCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		85C345F71DB39140009210DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85C345DA1DB3913F009210DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 85C345E11DB3913F009210DB;
+			remoteInfo = DriveItApp;
+		};
+		85C346021DB39140009210DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85C345DA1DB3913F009210DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 85C345E11DB3913F009210DB;
+			remoteInfo = DriveItApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		85C345E21DB39140009210DB /* DriveItApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriveItApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		85C345E51DB39140009210DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		85C345E71DB39140009210DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		85C345EA1DB39140009210DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		85C345EC1DB39140009210DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		85C345EF1DB39140009210DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		85C345F11DB39140009210DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85C345F61DB39140009210DB /* DriveItAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriveItAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		85C345FA1DB39140009210DB /* DriveItAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveItAppTests.swift; sourceTree = "<group>"; };
+		85C345FC1DB39140009210DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85C346011DB39140009210DB /* DriveItAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriveItAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		85C346051DB39140009210DB /* DriveItAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveItAppUITests.swift; sourceTree = "<group>"; };
+		85C346071DB39140009210DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85C346141DB3917C009210DB /* DriverModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverModel.swift; sourceTree = "<group>"; };
+		85C346191DB3F5EC009210DB /* CarInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarInfoViewController.swift; sourceTree = "<group>"; };
+		85C3461B1DB400CF009210DB /* CarPidInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarPidInfoViewController.swift; sourceTree = "<group>"; };
+		85C3461D1DB401B8009210DB /* PdiTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PdiTableCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		85C345DF1DB3913F009210DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85C345F31DB39140009210DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85C345FE1DB39140009210DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		85C345D91DB3913F009210DB = {
+			isa = PBXGroup;
+			children = (
+				85C345E41DB39140009210DB /* DriveItApp */,
+				85C345F91DB39140009210DB /* DriveItAppTests */,
+				85C346041DB39140009210DB /* DriveItAppUITests */,
+				85C345E31DB39140009210DB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		85C345E31DB39140009210DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				85C345E21DB39140009210DB /* DriveItApp.app */,
+				85C345F61DB39140009210DB /* DriveItAppTests.xctest */,
+				85C346011DB39140009210DB /* DriveItAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		85C345E41DB39140009210DB /* DriveItApp */ = {
+			isa = PBXGroup;
+			children = (
+				85C346161DB3F0FB009210DB /* Controllers */,
+				85C346131DB39171009210DB /* Models */,
+				85C345E51DB39140009210DB /* AppDelegate.swift */,
+				85C345E91DB39140009210DB /* Main.storyboard */,
+				85C345EC1DB39140009210DB /* Assets.xcassets */,
+				85C345EE1DB39140009210DB /* LaunchScreen.storyboard */,
+				85C345F11DB39140009210DB /* Info.plist */,
+			);
+			path = DriveItApp;
+			sourceTree = "<group>";
+		};
+		85C345F91DB39140009210DB /* DriveItAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				85C345FA1DB39140009210DB /* DriveItAppTests.swift */,
+				85C345FC1DB39140009210DB /* Info.plist */,
+			);
+			path = DriveItAppTests;
+			sourceTree = "<group>";
+		};
+		85C346041DB39140009210DB /* DriveItAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				85C346051DB39140009210DB /* DriveItAppUITests.swift */,
+				85C346071DB39140009210DB /* Info.plist */,
+			);
+			path = DriveItAppUITests;
+			sourceTree = "<group>";
+		};
+		85C346131DB39171009210DB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				85C346141DB3917C009210DB /* DriverModel.swift */,
+				85C3461D1DB401B8009210DB /* PdiTableCell.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		85C346161DB3F0FB009210DB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				85C345E71DB39140009210DB /* ViewController.swift */,
+				85C346191DB3F5EC009210DB /* CarInfoViewController.swift */,
+				85C3461B1DB400CF009210DB /* CarPidInfoViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		85C345E11DB3913F009210DB /* DriveItApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85C3460A1DB39140009210DB /* Build configuration list for PBXNativeTarget "DriveItApp" */;
+			buildPhases = (
+				85C345DE1DB3913F009210DB /* Sources */,
+				85C345DF1DB3913F009210DB /* Frameworks */,
+				85C345E01DB3913F009210DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DriveItApp;
+			productName = DriveItApp;
+			productReference = 85C345E21DB39140009210DB /* DriveItApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		85C345F51DB39140009210DB /* DriveItAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85C3460D1DB39140009210DB /* Build configuration list for PBXNativeTarget "DriveItAppTests" */;
+			buildPhases = (
+				85C345F21DB39140009210DB /* Sources */,
+				85C345F31DB39140009210DB /* Frameworks */,
+				85C345F41DB39140009210DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				85C345F81DB39140009210DB /* PBXTargetDependency */,
+			);
+			name = DriveItAppTests;
+			productName = DriveItAppTests;
+			productReference = 85C345F61DB39140009210DB /* DriveItAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		85C346001DB39140009210DB /* DriveItAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85C346101DB39140009210DB /* Build configuration list for PBXNativeTarget "DriveItAppUITests" */;
+			buildPhases = (
+				85C345FD1DB39140009210DB /* Sources */,
+				85C345FE1DB39140009210DB /* Frameworks */,
+				85C345FF1DB39140009210DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				85C346031DB39140009210DB /* PBXTargetDependency */,
+			);
+			name = DriveItAppUITests;
+			productName = DriveItAppUITests;
+			productReference = 85C346011DB39140009210DB /* DriveItAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		85C345DA1DB3913F009210DB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Shaheen Sharifian";
+				TargetAttributes = {
+					85C345E11DB3913F009210DB = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = EGP93434AU;
+						ProvisioningStyle = Automatic;
+					};
+					85C345F51DB39140009210DB = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = EGP93434AU;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 85C345E11DB3913F009210DB;
+					};
+					85C346001DB39140009210DB = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = EGP93434AU;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 85C345E11DB3913F009210DB;
+					};
+				};
+			};
+			buildConfigurationList = 85C345DD1DB3913F009210DB /* Build configuration list for PBXProject "DriveItApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 85C345D91DB3913F009210DB;
+			productRefGroup = 85C345E31DB39140009210DB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				85C345E11DB3913F009210DB /* DriveItApp */,
+				85C345F51DB39140009210DB /* DriveItAppTests */,
+				85C346001DB39140009210DB /* DriveItAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		85C345E01DB3913F009210DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85C345F01DB39140009210DB /* LaunchScreen.storyboard in Resources */,
+				85C345ED1DB39140009210DB /* Assets.xcassets in Resources */,
+				85C345EB1DB39140009210DB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85C345F41DB39140009210DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85C345FF1DB39140009210DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		85C345DE1DB3913F009210DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85C346151DB3917C009210DB /* DriverModel.swift in Sources */,
+				85C345E81DB39140009210DB /* ViewController.swift in Sources */,
+				85C345E61DB39140009210DB /* AppDelegate.swift in Sources */,
+				85C3461A1DB3F5EC009210DB /* CarInfoViewController.swift in Sources */,
+				85C3461E1DB401B8009210DB /* PdiTableCell.swift in Sources */,
+				85C3461C1DB400CF009210DB /* CarPidInfoViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85C345F21DB39140009210DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85C345FB1DB39140009210DB /* DriveItAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85C345FD1DB39140009210DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85C346061DB39140009210DB /* DriveItAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		85C345F81DB39140009210DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 85C345E11DB3913F009210DB /* DriveItApp */;
+			targetProxy = 85C345F71DB39140009210DB /* PBXContainerItemProxy */;
+		};
+		85C346031DB39140009210DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 85C345E11DB3913F009210DB /* DriveItApp */;
+			targetProxy = 85C346021DB39140009210DB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		85C345E91DB39140009210DB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				85C345EA1DB39140009210DB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		85C345EE1DB39140009210DB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				85C345EF1DB39140009210DB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		85C346081DB39140009210DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		85C346091DB39140009210DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		85C3460B1DB39140009210DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = EGP93434AU;
+				INFOPLIST_FILE = DriveItApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Shaheen-Sharifian.DriveItApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		85C3460C1DB39140009210DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = EGP93434AU;
+				INFOPLIST_FILE = DriveItApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Shaheen-Sharifian.DriveItApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		85C3460E1DB39140009210DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = EGP93434AU;
+				INFOPLIST_FILE = DriveItAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Shaheen-Sharifian.DriveItAppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DriveItApp.app/DriveItApp";
+			};
+			name = Debug;
+		};
+		85C3460F1DB39140009210DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = EGP93434AU;
+				INFOPLIST_FILE = DriveItAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Shaheen-Sharifian.DriveItAppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DriveItApp.app/DriveItApp";
+			};
+			name = Release;
+		};
+		85C346111DB39140009210DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = EGP93434AU;
+				INFOPLIST_FILE = DriveItAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Shaheen-Sharifian.DriveItAppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = DriveItApp;
+			};
+			name = Debug;
+		};
+		85C346121DB39140009210DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = EGP93434AU;
+				INFOPLIST_FILE = DriveItAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Shaheen-Sharifian.DriveItAppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = DriveItApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		85C345DD1DB3913F009210DB /* Build configuration list for PBXProject "DriveItApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85C346081DB39140009210DB /* Debug */,
+				85C346091DB39140009210DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85C3460A1DB39140009210DB /* Build configuration list for PBXNativeTarget "DriveItApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85C3460B1DB39140009210DB /* Debug */,
+				85C3460C1DB39140009210DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		85C3460D1DB39140009210DB /* Build configuration list for PBXNativeTarget "DriveItAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85C3460E1DB39140009210DB /* Debug */,
+				85C3460F1DB39140009210DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		85C346101DB39140009210DB /* Build configuration list for PBXNativeTarget "DriveItAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85C346111DB39140009210DB /* Debug */,
+				85C346121DB39140009210DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 85C345DA1DB3913F009210DB /* Project object */;
+}
