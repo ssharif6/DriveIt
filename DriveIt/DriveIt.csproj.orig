@@ -162,11 +162,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+=======
+    <Content Include="DubHacks.sql" />
+>>>>>>> e53f39c12c1e1b6ae38b58ac73d7124ea04b1a8b
     <Content Include="Global.asax" />
+    <Content Include="PidList.txt" />
     <Content Include="scripts\ai.0.22.19-build00125.js" />
     <Content Include="scripts\ai.0.22.19-build00125.min.js" />
     <Content Include="scripts\bootstrap.js" />
@@ -201,7 +206,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Managers\CarInfoManager.cs" />
     <Compile Include="Models\CarInputModel.cs" />
     <Compile Include="Models\CarOutputModel.cs" />
     <Compile Include="Models\PidModel.cs" />

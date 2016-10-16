@@ -11,7 +11,7 @@ namespace DriveIt.Managers
         private static string _connectionString = "Server=driveit.database.windows.net;Database=driveit;Trusted_Connection=true";
 
         public static string _getUserCarInfoById = @"SELECT * FROM Histories WHERE UserId = @userId AND CarId = @carId";
-        public GetUserCarInfo(int userId, int carId)
+        public void GetUserCarInfo(int userId, int carId)
         {
             var conn = withSqlConnection(_connectionString);
             SqlCommand command = new SqlCommand(_getUserCarInfoById, conn);

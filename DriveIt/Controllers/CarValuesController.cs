@@ -26,17 +26,21 @@ namespace DriveIt.Controllers
                 MinValue = 0,
                 Pid = pid,
                 Units = "units"
-            };            
+            };
 
             var model = new CarOutputModel
             {
                 PidModel = pidModel,
+                Rating = 1.0,
+                Value = value
+            };
 
-            }
+            return model;
         }
 
-        public GetUserInfo Get(int userId)
+        public CarInputModel Get(int userId)
         {
+            // get User
 
         }
     }
