@@ -9,9 +9,7 @@ namespace DriveIt.Models
     {
         public string Description { get; set; }
         public int Pid { get; set; }
-        public int MinValue { get; set; }
-        public int MaxValue { get; set; }
         public string Units { get; set; }
-
+        public double Value { get; set; }
     }
 }
