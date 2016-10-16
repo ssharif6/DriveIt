@@ -126,7 +126,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DubHacks.sql" />
+    <Content Include="DubHacks-AddEntries.sql" />
+    <Content Include="DubHacks-AddPIdEntries.sql" />
+    <Content Include="DubHacks-CreateTable.sql" />
     <Content Include="Global.asax" />
     <Content Include="PidList.txt" />
     <Content Include="scripts\ai.0.22.19-build00125.js" />
