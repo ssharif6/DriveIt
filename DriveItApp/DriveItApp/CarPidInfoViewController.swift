@@ -38,22 +38,25 @@ class CarPidInfoViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func getData() {
+        /*
         let getUrl = NSURL(string: "http://driveitwebapp.azurewebsites.net/api/CarValues")
-        var carId = 5
 
         let taskGet = URLSession.shared.dataTask(with: getUrl! as URL) {(data, response, error) in
             print(NSString(data: data!, encoding: String.Encoding.utf8.rawValue))
+            print(response)
             let shitString = String(data: data!, encoding: String.Encoding.utf8)
             carId = Int(shitString!)!
-            print(carId)
-            print("FUCK")
+            
         }
         taskGet.resume()
+ */
+        var carId = 5
+
 
         if UserDefaults.standard.value(forKey: "cardId") != nil {
             carId = UserDefaults.standard.value(forKey: "carId") as! Int
         }
-        let url = NSURL(string: "http://driveitwebapp.azurewebsites.net/api/CarValues?userId=1&carId=\(carId)")
+        let url = NSURL(string: "http://driveitwebapp.azurewebsites.net/api/CarValues?userId=1&carId=5")
             
             let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
                 print(NSString(data: data!, encoding: String.Encoding.utf8.rawValue))
@@ -64,9 +67,9 @@ class CarPidInfoViewController: UIViewController, UITableViewDelegate, UITableVi
 
                 self.userModel = jObject?["UserModel"] as! [String : AnyObject]
                 DispatchQueue.main.async(execute: { 
-                    self.titleLabel.text = "\(self.userModel["FirstName"]as! String)'s Car Information"
-                    self.makeLabel.text = "Make: \(self.userModel["CarMake"] as! String)"
-                    self.modelLabel.text = "Model: \(self.userModel["CarModel"] as! String)"
+                    self.titleLabel.text = "\(self.userModel["FirstName"]as! String)'s Car Information)"
+                    self.makeLabel.text = "Make: Ford"
+                    self.modelLabel.text = "Model: CMax"
                     self.yearLabel.text = "Year: \(self.userModel["CarYear"] as! String)"
                 })
                 
