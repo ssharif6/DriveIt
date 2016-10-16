@@ -1,0 +1,25 @@
+﻿
+CREATE TABLE dbo.Users (
+	UserId INTEGER PRIMARY KEY,
+	FirstName VARCHAR(25),
+	LastName VARCHAR(25),
+	Age INTEGER,
+);
+
+CREATE TABLE dbo.Cars (
+	CarId INTEGER PRIMARY KEY,
+	Make VARCHAR(25),
+	Model VARCHAR(25),
+	Year VARCHAR(25)
+);
+
+CREATE TABLE dbo.Histories (
+	HistoryId INTEGER PRIMARY KEY,
+	UserId INTEGER,
+	CarId INTEGER,
+	PId INTEGER,
+	Value FLOAT,
+	FOREIGN KEY (UserId) REFERENCES Users(UserId),
+	FOREIGN KEY (CarId) REFERENCES Cars(CarId),
+	FOREIGN KEY (PId) REFERENCES PidTable(PId)
+);
