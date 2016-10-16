@@ -5,6 +5,6 @@ namespace DriveIt.Models
     public class CarInputModel
     {
         public UserModel UserModel { get; set; }
-        public Dictionary<string, PidModel> PidModel { get; set; }
+        public List<PidModel> PidModel { get; set; }
     }
 }

@@ -9,19 +9,51 @@ namespace DriveIt.Managers
     public class CarInfoManager
     {
         private static string _connectionString = "Server=driveit.database.windows.net;Database=driveit;Trusted_Connection=\'false\';User=DubHacks;Password=Glowacki123";
-        
-        public static string _getUserCarInfoById = @"SELECT Histories.PId, PidTable.Descriptions, PidTable.Units, Users.FirstName, Users.LastName, Users.Age, Cars.Make, Cars.Model, Cars.Year, Cars.IsHybrid, AVG(Histories.Value) AS Value FROM Histories, PidTable, Cars, Users WHERE PidTable.PId = Histories.PId AND Histories.UserId = Users.UserId AND Histories.UserId = @userId AND Histories.CarId = @carId AND Histories.CarId = 5 GROUP BY Histories.PId, PidTable.Descriptions, PidTable.Units, Users.FirstName, Users.LastName, Users.Age, Cars.Make, Cars.Model, Cars.Year, Cars.IsHybrid;";
 
-        public CarInputModel GetUserCarInfo(int userId, int carId)
+        public static string _getUserCarInfoById = @"SELECT h1.PId, PidTable.Descriptions, PidTable.Units, Users.FirstName, Users.LastName, Users.Age, Cars.Make, Cars.Model, Cars.Year, Cars.IsHybrid, AVG(h1.Value) AS Value,
+	(SELECT AVG(h2.Value) AS NationalValue 
+	FROM Histories h2 
+	WHERE h1.PId = h2.PId AND h2.UserId = @userId
+	GROUP BY h2.PId) AS NationalValue
+FROM Histories h1, PidTable, Cars, Users 
+WHERE PidTable.PId = h1.PId AND h1.UserId = Users.UserId AND h1.UserId = @userId AND h1.CarId = @carId 
+GROUP BY h1.PId, PidTable.Descriptions, PidTable.Units, Users.FirstName, Users.LastName, Users.Age, Cars.Make, Cars.Model, Cars.Year, Cars.IsHybrid;";
+
+        public string GetPIdDesciption(string pid, double value)
         {
             using (var conn = new SqlConnection())
             {
                 conn.ConnectionString = _connectionString;
                 conn.Open();
+                var command = new SqlCommand(@"SELECT Descriptions, Units FROM PidTable Where PId = @pid", conn);
+                command.Parameters.Add(new SqlParameter("pid", pid));
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return string.Format("{0}: {1}{2}", reader["Descriptions"].ToString(), value, reader["Units"]);
+                    }
+                }
+
+                return string.Empty;
+            }
+        }
+
+        public CarInputModel GetUserCarInfo(int userId, int carId)
+        {
+            using (var conn = new SqlConnection())
+            {
+                var privSet = new HashSet<string>();
+                conn.ConnectionString = _connectionString;
+                conn.Open();
                 var command = new SqlCommand(_getUserCarInfoById, conn);
                 command.Parameters.Add(new SqlParameter("userId", userId));
                 command.Parameters.Add(new SqlParameter("carId", carId));
-                var result = new CarInputModel();
+                var result = new CarInputModel()
+                {
+                    PidModel = new List<PidModel>()
+                };
 
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
@@ -36,14 +68,23 @@ namespace DriveIt.Managers
                                 Age = (int)reader["Age"],
                                 CarMake = reader["Make"].ToString(),
                                 CarModel = reader["Model"].ToString(),
-                                CarYear = (int)reader["Year"]
+                                CarYear = reader["Year"].ToString()
                             };
                         }
-                        result.PidModel.Add(reader["PId"].ToString(), new PidModel() {
-                            Description = reader["Description"].ToString(),
-                            Units = reader["Units"].ToString(),
-                            Value = (double)reader["Value"]
-                        });
+
+                        if (!privSet.Contains(reader["PId"].ToString()))
+                        {
+                            result.PidModel.Add(new PidModel()
+                            {
+                                Description = reader["Descriptions"].ToString(),
+                                Pid = reader["PId"].ToString(),
+                                Units = reader["Units"].ToString(),
+                                Value = Math.Round((double)reader["Value"], 2),
+                                NationalValue = Math.Round((double)reader["NationalValue"], 2)
+                            });
+
+                            privSet.Add(reader["PId"].ToString());
+                        }
                     }
                 }
 
@@ -82,7 +123,7 @@ namespace DriveIt.Managers
             {
                 conn.ConnectionString = _connectionString;
                 conn.Open();
-                var command = new SqlCommand(_getUserCarInfoById, conn);
+                var command = new SqlCommand(_tryGetCarId, conn);
                 command.Parameters.Add(new SqlParameter("make", make));
                 command.Parameters.Add(new SqlParameter("model", model));
                 command.Parameters.Add(new SqlParameter("year", year));
@@ -94,25 +135,41 @@ namespace DriveIt.Managers
                     {
                         return (int)reader["CarId"];
                     }
+                }
+            }
 
-                    var insertCommand = new SqlCommand(_getUserCarInfoById, conn);
-                    insertCommand.Parameters.Add(new SqlParameter("make", make));
-                    insertCommand.Parameters.Add(new SqlParameter("model", model));
-                    insertCommand.Parameters.Add(new SqlParameter("year", year));
-                    insertCommand.Parameters.Add(new SqlParameter("isHybrid", isHybrid ? 1 : 0));
-                    insertCommand.ExecuteNonQuery();
+            using (var conn = new SqlConnection())
+            {
+                conn.ConnectionString = _connectionString;
+                conn.Open();
+                var insertCommand = new SqlCommand(_insertCarRow, conn);
+                insertCommand.Parameters.Add(new SqlParameter("make", make));
+                insertCommand.Parameters.Add(new SqlParameter("model", model));
+                insertCommand.Parameters.Add(new SqlParameter("year", year));
+                insertCommand.Parameters.Add(new SqlParameter("isHybrid", isHybrid ? 1 : 0));
+                insertCommand.ExecuteNonQuery();
+            }
 
-                    using (SqlDataReader reader2 = command.ExecuteReader())
+            using (var conn = new SqlConnection())
+            {
+                conn.ConnectionString = _connectionString;
+                conn.Open();
+                var command = new SqlCommand(_tryGetCarId, conn);
+                command.Parameters.Add(new SqlParameter("make", make));
+                command.Parameters.Add(new SqlParameter("model", model));
+                command.Parameters.Add(new SqlParameter("year", year));
+                command.Parameters.Add(new SqlParameter("isHybrid", isHybrid ? 1 : 0));
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
                     {
-                        if (reader.Read())
-                        {
-                            return (int)reader["CarId"];
-                        }
+                        return (int)reader["CarId"];
                     }
                 }
-
-                return 3;
             }
+
+            return 3;
         }
     }
 }

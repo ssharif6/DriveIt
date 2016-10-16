@@ -11,7 +11,7 @@ namespace DriveIt.Models
         public string LastName { get; set; }
         public string CarModel { get; set; }
         public string CarMake { get; set; } // make enum
-        public int CarYear { get; set; }
+        public string CarYear { get; set; }
         public int Age { get; set; }
     }
 }
